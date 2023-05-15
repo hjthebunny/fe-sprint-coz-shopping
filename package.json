@@ -1,4 +1,7 @@
 {
+  "resolutions": {
+    "styled-components": "^5"
+  },
   "name": "solo_project_spa",
   "version": "0.1.0",
   "private": true,

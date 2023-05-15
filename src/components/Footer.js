@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-//header와의 영역 분리 위한 임시 여백
- margin-top: 50px;
- 
   box-sizing: border-box;
   position: relative;
   height: 58px;

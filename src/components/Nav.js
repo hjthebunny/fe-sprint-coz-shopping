@@ -15,28 +15,48 @@ position: relative;
   top: 2.33%;
   bottom: 87.21%;
   }
-  >div{
-    display: flex;
+  `;
+export const Wrapper = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-
   position: absolute;
   left: 0%;
   right: 0%;
   top: 12.79%;
   bottom: 0%;
-
   background: #FFFFFF;
   border-radius: 12px;
-  }
-`
+  >div{
+    position: relative;
+    width: 200px;
+    height: 50px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    >img{
+      margin-right: 8px;
+    }
+    &:last-child{
+    border-bottom: 0px;
+    right: 14px;
+  } 
+  } 
+  `;
+
 function Nav() {
-    return (
-        <nav>
-            <img src="../Polygon.svg" alt="polygon" />
-            <div></div>
-        </nav>
-    )
+  return (
+    <DropdownContainer>
+      <img src="../Polygon.svg" alt="polygon" />
+      <Wrapper>
+        <div>안현지님, 안녕하세요!</div>
+        <div><img src="item.svg" alt="item" /> 상품리스트 페이지</div>
+        <div><img src="bookmark.svg" alt="bookmark" />북마크 페이지</div>
+      </Wrapper>
+
+    </DropdownContainer>
+  )
 }
 export default Nav;

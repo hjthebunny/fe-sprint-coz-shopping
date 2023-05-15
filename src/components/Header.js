@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Nav from "./Nav";
+import { useState } from "react";
 
 export const TitleContainer = styled.div`
   position: relative;
@@ -23,13 +25,14 @@ right: 89.77%;
 }
 >h1{
     position: absolute;
-  left: 11.17%;
+  left: 11.7%;
   right: 70.86%;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   color: black;
+
 }
 `;
 
@@ -44,21 +47,29 @@ export const MenuBtn = styled.img`
 
 
 
-function Header() {
-    return (
-        <header>
-            <TitleContainer>
-                <Title>
-                    <img id="logo" src="../logo.png" alt="logo" />
-                    <h1 id="name">COZ Shopping</h1>
-                </Title>
-            </TitleContainer>
+function Header({ handleButtonClick }) {
+  const handleClick = () => {
+    handleButtonClick();
+  };
 
-            <MenuBtn id="menu" src="../menu.png" alt="hamburger menu" />
-        </header>
+  return (
+    <>
+      <TitleContainer>
+
+        <Title>
+          <img src="../logo.png" alt="logo" />
+          <h1>COZ Shopping</h1>
+        </Title>
 
 
-    )
+        <MenuBtn src="../menu.png" alt="menu" onClick={handleClick} />
+      </TitleContainer>
+
+
+    </>
+
+
+  )
 }
 
 export default Header;
