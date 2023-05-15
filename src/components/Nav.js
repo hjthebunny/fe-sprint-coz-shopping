@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const DropdownContainer = styled.div`
-position: relative;
+position: absolute;
+z-index: 10;
   width: 200px;
   height: 172px;
   left: 82.8%;
-  top: -30px;
+  top: 50px;
   filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
   >img{
     position: absolute;
@@ -58,7 +59,7 @@ function Nav() {
       <img src="../Polygon.svg" alt="polygon" />
       <Wrapper>
         <div>안현지님, 안녕하세요!</div>
-        <div><Link to="/products/list"><img src="../item.svg" alt="item" /> 상품리스트 페이지</Link></div>
+        <div><Link to="/products/list"><img src="../item.svg" alt="item" />상품리스트 페이지</Link></div>
         <div><Link to="/bookmark"><img src="../bookmark.svg" alt="bookmark" />북마크 페이지</Link></div>
       </Wrapper>
 

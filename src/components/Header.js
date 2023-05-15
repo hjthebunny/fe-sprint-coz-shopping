@@ -4,13 +4,16 @@ import Nav from "./Nav";
 import { useState } from "react";
 
 export const TitleContainer = styled.div`
-  position: relative;
+z-index: 1;
+  position: sticky;
   width: 100%;
   height: 80px;
   background: #FFFFFF;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  top: 0;
+  left:0;
 `;
 
 export const Title = styled.div`
@@ -47,10 +50,11 @@ export const MenuBtn = styled.img`
 
 
 
-function Header({ handleButtonClick }) {
+function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
-    handleButtonClick()
-  }
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -64,9 +68,10 @@ function Header({ handleButtonClick }) {
 
         <MenuBtn src="../menu.png" alt="menu" onClick={handleClick} />
       </TitleContainer >
-
+      {isOpen ? <Nav /> : null}
 
     </>
+
 
 
   )

@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  box-sizing: border-box;
-  position: relative;
+position: relative;
   height: 58px;
   background: #FFFFFF;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
