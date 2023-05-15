@@ -36,14 +36,20 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    >img{
+    >a{
+      text-decoration: none;
+      color: #000000;
+      >img{
       margin-right: 8px;
+     
+    }
     }
     &:last-child{
     border-bottom: 0px;
-    right: 14px;
+    right: 15px;
   } 
-  } 
+  }
+ 
   `;
 
 function Nav() {
@@ -52,8 +58,8 @@ function Nav() {
       <img src="../Polygon.svg" alt="polygon" />
       <Wrapper>
         <div>안현지님, 안녕하세요!</div>
-        <div><img src="item.svg" alt="item" /> 상품리스트 페이지</div>
-        <div><img src="bookmark.svg" alt="bookmark" />북마크 페이지</div>
+        <div><Link to="/products/list"><img src="../item.svg" alt="item" /> 상품리스트 페이지</Link></div>
+        <div><Link to="/bookmark"><img src="../bookmark.svg" alt="bookmark" />북마크 페이지</Link></div>
       </Wrapper>
 
     </DropdownContainer>
