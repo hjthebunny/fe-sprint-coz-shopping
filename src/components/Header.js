@@ -49,21 +49,21 @@ export const MenuBtn = styled.img`
 
 function Header({ handleButtonClick }) {
   const handleClick = () => {
-    handleButtonClick();
-  };
+    handleButtonClick()
+  }
 
   return (
     <>
       <TitleContainer>
-
-        <Title>
-          <img src="../logo.png" alt="logo" />
-          <h1>COZ Shopping</h1>
-        </Title>
-
+        <Link to="/">
+          <Title>
+            <img src="../logo.png" alt="logo" />
+            <h1>COZ Shopping</h1>
+          </Title>
+        </Link >
 
         <MenuBtn src="../menu.png" alt="menu" onClick={handleClick} />
-      </TitleContainer>
+      </TitleContainer >
 
 
     </>
