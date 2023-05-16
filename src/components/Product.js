@@ -10,12 +10,12 @@ margin: 24px;
 export const ItemImg = styled.div`
 position:relative;
 >img{
-    height: 210px;
+height: 210px;
 width: 264px;
 border-radius: 12px
 }
 `;
-export const Bookmarkicon = styled.div`
+export const BookmarkIcon = styled.div`
 position: absolute;
 right: 12px;
 bottom: 12px;
@@ -77,7 +77,7 @@ const Product = ({ product }) => {
     return (
         <ItemContainer >
             <ItemImg><img src={product.type === "Brand" ? product.brand_image_url : product.image_url} alt={product.type === "Brand" ? product.brand_name : product.title} />
-                <Bookmarkicon> <img src='../bookmark_off.svg' /></Bookmarkicon></ItemImg>
+                <BookmarkIcon> <img src='../bookmark_off.svg' /></BookmarkIcon></ItemImg>
             <ContentWrapper>
                 <ItemName>{product.type === "Brand" ? product.brand_name : product.title}</ItemName>
                 <UpRight color={product.type === "Product" ? "#452CDD" : "#000000"}>
