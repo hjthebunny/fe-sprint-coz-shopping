@@ -6,9 +6,6 @@ import ProductList from "./pages/ProductList";
 import Bookmark from "./pages/Bookmark";
 import './App.css';
 
-// fetch('http://cozshopping.codestates-seb.link/api/v1/products?count=10')
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
 
 function App() {
   return (

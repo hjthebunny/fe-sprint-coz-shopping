@@ -7,12 +7,20 @@ width: 264px;
 height: 264px;
 margin: 24px;
 `;
-export const ItemImg = styled.img`
-height: 210px;
+export const ItemImg = styled.div`
+position:relative;
+>img{
+    height: 210px;
 width: 264px;
-border-radius: 12px;
-`
+border-radius: 12px
+}
+`;
+export const Bookmarkicon = styled.div`
+position: absolute;
+right: 12px;
+bottom: 12px;
 
+`
 export const ContentWrapper = styled.div`
 margin: 6px;
 display: flex;
@@ -68,7 +76,8 @@ left:0`;
 const Product = ({ product }) => {
     return (
         <ItemContainer >
-            <ItemImg src={product.type === "Brand" ? product.brand_image_url : product.image_url} alt={product.type === "Brand" ? product.brand_name : product.title} />
+            <ItemImg><img src={product.type === "Brand" ? product.brand_image_url : product.image_url} alt={product.type === "Brand" ? product.brand_name : product.title} />
+                <Bookmarkicon> <img src='../bookmark_off.svg' /></Bookmarkicon></ItemImg>
             <ContentWrapper>
                 <ItemName>{product.type === "Brand" ? product.brand_name : product.title}</ItemName>
                 <UpRight color={product.type === "Product" ? "#452CDD" : "#000000"}>
