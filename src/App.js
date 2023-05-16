@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from './components/Header/Header';
 import Footer from "./components/Footer/Footer";
-import Main from "./pages/Main";
-import ProductList from "./pages/ProductList";
+import Main from "./pages/Main/Main";
+import ProductListPage from "./pages/ProductListPage";
 import Bookmark from "./pages/Bookmark";
 import './App.css';
 
