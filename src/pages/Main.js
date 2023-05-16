@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Product from '../components/Product';
+import Product from '../components/Product/Product';
 import styled from 'styled-components';
-
 
 export const ProductList = styled.ul`
 display:flex;

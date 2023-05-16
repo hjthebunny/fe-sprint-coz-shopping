@@ -1,0 +1,8 @@
+:root {
+    /* color */
+    --white: #FFFFFF;
+    --black: #000000;
+    --point-violet: #452CDD;
+    --footer-gray: #888888;
+    --black-trans-100: rgba(0, 0, 0, 0.1);
+}
