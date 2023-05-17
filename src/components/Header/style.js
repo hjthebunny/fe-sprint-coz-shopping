@@ -11,6 +11,7 @@ display: flex;
 align-items: center;
 top: 0;
 left:0;
+background-color: var(--white);
 `;
 
 export const Title = styled.div`

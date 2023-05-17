@@ -23,6 +23,7 @@ display: flex;
 align-items: center;
 `
 export const ProductList = styled.ul`
+margin-top: 12px;
 display:flex;
 justify-content:center;
 list-style:none;
