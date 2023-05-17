@@ -8,6 +8,7 @@ margin: 24px;
 `;
 export const ItemImg = styled.div`
 position:relative;
+cursor: pointer;
 >img{
 height: 210px;
 width: 264px;

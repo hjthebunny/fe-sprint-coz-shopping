@@ -18,7 +18,7 @@ function Header() {
             <h1>COZ Shopping</h1>
           </S.Title>
         </Link >
-        <S.MenuBtn src="../menu.png" alt="menu" onClick={handleClick} />
+        <S.MenuBtn src="../icon/menu.png" alt="menu" onClick={handleClick} />
       </S.TitleContainer >
       {isOpen ? <Nav /> : null}
     </>

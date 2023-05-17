@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './style'
 import '../../variables.css'
+import { Modal } from '../Modal/Modal';
 
 const Type = {
     CATEGORY: "Category",
@@ -10,10 +11,17 @@ const Type = {
 };
 
 const Product = ({ product }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const openModalHandler = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <S.ItemContainer >
-            <S.ItemImg><img src={product.type === Type.BRAND ? product.brand_image_url : product.image_url} alt={product.type === Type.BRAND ? product.brand_name : product.title} />
-                <S.BookmarkIcon> <img src='../bookmark_off.svg' alt='bookmark_off' /></S.BookmarkIcon></S.ItemImg>
+            <S.ItemImg onClick={openModalHandler}><img src={product.type === Type.BRAND ? product.brand_image_url : product.image_url} alt={product.type === Type.BRAND ? product.brand_name : product.title} />
+                {isOpen ? <Modal product={product} openModalHandler={openModalHandler} /> : null}
+                <S.BookmarkIcon> <img src='../icon/bookmark_off.svg' alt='bookmark_off' /></S.BookmarkIcon></S.ItemImg>
             <S.ContentWrapper>
                 <S.ItemName>{product.type === Type.BRAND ? product.brand_name :
                     product.type === Type.CATEGORY ? "# " + product.title : product.title}</S.ItemName>
