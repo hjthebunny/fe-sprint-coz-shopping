@@ -2,12 +2,9 @@ import styled from 'styled-components'
 import '../../variables.css'
 
 export const ModalBackdrop = styled.div`
-  // TODO : Modal이 떴을 때의 배경을 깔아주는 CSS를 구현합니다.
   position: fixed; 
   top: 0; bottom: 0; left: 0; right:0;
-  background-color: rgba(0, 0, 0, 0.3);
-
-  //모달창 중앙 정렬
+  background: rgba(255, 255, 255, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,6 +19,16 @@ height: 480px;
 border: 1px solid var(--black-trans-100);
 border-radius: 12px;
 }
+`
+export const ModalGradient = styled.div`
+width: 744px;
+height: 240px;
+position: absolute;
+left: 0%;
+right: 0%;
+top: 50%;
+border-radius: 12px;
+background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.5) 100%);
 `
 
 export const CloseBtn = styled.div`

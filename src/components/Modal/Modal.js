@@ -15,6 +15,7 @@ export const Modal = ({ product, openModalHandler }) => {
         <S.ModalBackdrop onClick={(event) => event.stopPropagation()} >
             <S.ModalImg>
                 <img src={product.type === Type.BRAND ? product.brand_image_url : product.image_url} alt={product.type === Type.BRAND ? product.brand_name : product.title} onClick={(event) => event.stopPropagation()} />
+                <S.ModalGradient></S.ModalGradient>
                 <S.CloseBtn onClick={openModalHandler}>
                     <img src='../icon/round-close.svg' alt='closebutton' />
                 </S.CloseBtn>
