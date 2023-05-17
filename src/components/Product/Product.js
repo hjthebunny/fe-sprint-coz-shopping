@@ -14,7 +14,6 @@ const Product = ({ product }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const openModalHandler = () => {
-        // TODO : isOpen의 상태를 변경하는 메소드를 구현합니다.
         setIsOpen(!isOpen);
     };
 
