@@ -4,7 +4,7 @@ export const ItemContainer = styled.li`
 position: relative;
 width: 264px;
 height: 264px;
-margin: 24px;
+margin: 0 24px;
 `;
 export const ItemImg = styled.div`
 position:relative;
@@ -21,7 +21,7 @@ bottom: 12px;
 
 `
 export const ContentWrapper = styled.div`
-margin: 6px;
+margin-top: 6px;
 display: flex;
 `
 export const ItemName = styled.div`
@@ -62,7 +62,8 @@ font-size: 16px;
 line-height: 19px;
 display: flex;
 align-items: center;
+margin-bottom: 12px;
 `;
 
 export const DownRight = styled(DownLeft)`
-left:0`;
+left:0%`;

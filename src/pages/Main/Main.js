@@ -11,7 +11,7 @@ const Main = () => {
 
         axios.get("http://cozshopping.codestates-seb.link/api/v1/products?count=4")
             .then(res => setData(res.data))
-            .catch(error => console.error(error))
+            .catch(error => console.log(error))
 
     }, [])
 
