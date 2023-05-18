@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Product from "../../components/Product/Product";
-import axios from "axios";
 import * as S from "./style";
 const Type = {
     CATEGORY: "Category",
@@ -10,14 +9,9 @@ const Type = {
 };
 
 const ProductListPage = ({ bookmarkHandler, bookmarkData }) => {
-    const [data, setData] = useState([])
-    const [currentTab, setCurrentTab] = useState(0);
 
-    useEffect(() => {
-        axios.get("http://cozshopping.codestates-seb.link/api/v1/products")
-            .then(res => setData(res.data))
-            .catch(error => console.log(error))
-    }, [])
+    const [currentTab, setCurrentTab] = useState(0);
+    const data = bookmarkData
 
     const all = data && data.map((product) => <Product product={product} key={product.id} bookmarkHandler={bookmarkHandler} isBookmarked={bookmarkData.some(item => item.id === product.id)} />)
     const product = data && (data.filter(data => data.type === Type.PRODUCT)).map((product) => <Product product={product} key={product.id} bookmarkHandler={bookmarkHandler} isBookmarked={bookmarkData.some(item => item.id === product.id)} />)
@@ -36,7 +30,6 @@ const ProductListPage = ({ bookmarkHandler, bookmarkData }) => {
     const selectMenuHandler = (index) => {
         setCurrentTab(index)
     };
-
 
     return (
         <>
