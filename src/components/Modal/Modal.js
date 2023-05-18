@@ -10,8 +10,6 @@ const Type = {
 
 export const Modal = ({ product, openModalHandler, isBookmarked, bookmarkHandler }) => {
     return (
-
-        //모달 배경
         <S.ModalBackdrop onClick={(event) => event.stopPropagation()} >
             <S.ModalImg>
                 <img src={product.type === Type.BRAND ? product.brand_image_url : product.image_url} alt={product.type === Type.BRAND ? product.brand_name : product.title} onClick={(event) => event.stopPropagation()} />

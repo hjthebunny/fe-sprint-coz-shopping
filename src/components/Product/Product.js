@@ -3,7 +3,6 @@ import * as S from './style'
 import '../../variables.css'
 import { Modal } from '../Modal/Modal';
 
-
 const Type = {
     CATEGORY: "Category",
     EXHIBITION: "Exhibition",
@@ -11,11 +10,9 @@ const Type = {
     BRAND: "Brand"
 };
 
-
 const Product = ({ product }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isBookmarked, setIsBookmarked] = useState(false);
-    const [stored, setStored] = useState([])
 
     const openModalHandler = () => {
         setIsOpen(!isOpen);
@@ -48,34 +45,7 @@ const Product = ({ product }) => {
         follower: product.follower
     }
 
-
-
-    // useEffect(() => {
-    //     setStored([...stored, obj])
-    // }, [])
-    // console.log(stored);
-
-
-    // const addData = () => {
-    //     const dataArray = JSON.parse(localStorage.getItem('bookmark')) || [];
-    //     dataArray.push(obj);
-    //     localStorage.setItem('bookmark', JSON.stringify(dataArray))
-    //     // if (!JSON.parse(localStorage.getItem('bookmark'))) {
-
-    //     // }
-    //     // else {
-    //     //     const newBookmark = JSON.parse(localStorage.getItem(('bookmark'))).push(obj);
-    //     //     localStorage.setItem('bookmark', JSON.stringify(newBookmark))
-    //     // }
-    // }
-
-
-    const removeItem = (product) => {
-        window.localStorage.removeItem('bookmark')
-    }
-
     return (
-
         <S.ItemContainer >
             <S.ItemImg onClick={openModalHandler}><img src={product.type === Type.BRAND ? product.brand_image_url : product.image_url} alt={product.type === Type.BRAND ? product.brand_name : product.title} />
                 {isOpen ? <Modal product={product} openModalHandler={openModalHandler} isBookmarked={isBookmarked} bookmarkHandler={bookmarkHandler} /> : null}
@@ -95,8 +65,6 @@ const Product = ({ product }) => {
             <S.DownRight>{product.type === Type.EXHIBITION ? product.sub_title : null}</S.DownRight>
         </S.ItemContainer >
     )
-
 }
-
 
 export default Product;
