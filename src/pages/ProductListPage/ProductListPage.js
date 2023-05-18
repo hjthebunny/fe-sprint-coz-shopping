@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Product from '../../components/Product/Product';
+import Product from "../../components/Product/Product";
 import axios from "axios";
 import * as S from "./style";
 const Type = {
@@ -36,6 +36,8 @@ const ProductListPage = () => {
     const selectMenuHandler = (index) => {
         setCurrentTab(index)
     };
+
+
     return (
         <>
             <S.TabMenu>

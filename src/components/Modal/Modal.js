@@ -8,10 +8,8 @@ const Type = {
     BRAND: "Brand"
 };
 
-export const Modal = ({ product, openModalHandler }) => {
+export const Modal = ({ product, openModalHandler, isBookmarked, bookmarkHandler }) => {
     return (
-
-        //모달 배경
         <S.ModalBackdrop onClick={(event) => event.stopPropagation()} >
             <S.ModalImg>
                 <img src={product.type === Type.BRAND ? product.brand_image_url : product.image_url} alt={product.type === Type.BRAND ? product.brand_name : product.title} onClick={(event) => event.stopPropagation()} />
@@ -20,7 +18,10 @@ export const Modal = ({ product, openModalHandler }) => {
                     <img src='../icon/round-close.svg' alt='closebutton' />
                 </S.CloseBtn>
                 <S.ItemWrapper>
-                    <img src='../icon/bookmark_off.svg' alt='bookmarkicon' />
+                    <S.BookmarkIconWrapper onClick={bookmarkHandler}>
+                        {!isBookmarked ? <img src='../icon/bookmark_off.svg' alt='bookmark_off' /> :
+                            <img src='../icon/bookmark_on.svg' alt='bookmark_on' />}
+                    </S.BookmarkIconWrapper>
                     <S.ItemName>{product.type === Type.BRAND ? product.brand_name :
                         product.type === Type.CATEGORY ? "# " + product.title : product.title}</S.ItemName>
                 </S.ItemWrapper>

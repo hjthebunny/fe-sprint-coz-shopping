@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import '../../variables.css'
 
 export const ItemContainer = styled.li`
 position: relative;
@@ -15,10 +16,16 @@ width: 264px;
 border-radius: 12px
 }
 `;
+
+export const BookmarkIconWrapper = styled.div`
+`
 export const BookmarkIcon = styled.div`
 position: absolute;
 right: 12px;
 bottom: 12px;
+>img{
+    filter: drop-shadow(0px 5px 5px rgba(0,0,0, 0.1));
+}
 
 `
 export const ContentWrapper = styled.div`
