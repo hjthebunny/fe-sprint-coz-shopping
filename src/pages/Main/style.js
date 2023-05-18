@@ -6,6 +6,7 @@ justify-content:center`
 export const BookmarkListWrapper = styled.div`
 width: fit-content;
 margin-left:215.5px ;
+height: 300px;
 `
 
 

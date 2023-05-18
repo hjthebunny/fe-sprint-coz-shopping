@@ -9,15 +9,8 @@ const Type = {
     BRAND: "Brand"
 };
 
-const ProductListPage = ({ bookmarkHandler, bookmarkData }) => {
-    const [data, setData] = useState([])
+const ProductListPage = ({ bookmarkHandler, bookmarkData, data }) => {
     const [currentTab, setCurrentTab] = useState(0);
-
-    useEffect(() => {
-        axios.get("http://cozshopping.codestates-seb.link/api/v1/products")
-            .then(res => setData(res.data))
-            .catch(error => console.log(error))
-    }, [])
 
     const all = data && data.map((product) => <Product product={product} key={product.id} bookmarkHandler={bookmarkHandler} isBookmarked={bookmarkData.some(item => item.id === product.id)} />)
     const product = data && (data.filter(data => data.type === Type.PRODUCT)).map((product) => <Product product={product} key={product.id} bookmarkHandler={bookmarkHandler} isBookmarked={bookmarkData.some(item => item.id === product.id)} />)

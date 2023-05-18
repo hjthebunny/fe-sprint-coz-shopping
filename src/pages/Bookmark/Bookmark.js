@@ -43,10 +43,7 @@ const ProductListPage = ({ bookmarkHandler, bookmarkData }) => {
                 })}
             </S.TabMenu>
             <S.Desc>
-
-                {currentTab === 0 ?
-                    <S.ProductListAll>{all}</S.ProductListAll> :
-                    <S.ProductList>{type[currentTab].content}</S.ProductList>}
+                <S.ProductList>{type[currentTab].content}</S.ProductList>
             </S.Desc>
         </>
     )

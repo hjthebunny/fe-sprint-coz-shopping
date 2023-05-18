@@ -9,7 +9,7 @@ const Main = ({ data, bookmarkData, bookmarkHandler }) => {
                 <S.ListContainer>
                     <S.Title1>상품리스트</S.Title1>
                     <S.List>
-                        {data && data.map((product) => (
+                        {data && data.slice(0, 4).map((product) => (
                             <Product
                                 product={product}
                                 key={product.id}
