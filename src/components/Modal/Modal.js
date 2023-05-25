@@ -1,12 +1,6 @@
 import React from 'react'
-import * as S from './style'
-
-const Type = {
-    CATEGORY: "Category",
-    EXHIBITION: "Exhibition",
-    PRODUCT: "Product",
-    BRAND: "Brand"
-};
+import * as S from './Modal.styled'
+import { Type } from '../../Type';
 
 export const Modal = ({ product, openModalHandler, isBookmarked, bookmarkHandler }) => {
     return (

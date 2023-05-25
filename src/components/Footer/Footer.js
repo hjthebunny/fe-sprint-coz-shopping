@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from './style'
+import * as S from './Footer.styled'
 
 function Footer() {
   return (

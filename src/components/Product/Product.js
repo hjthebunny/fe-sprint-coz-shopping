@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
-import * as S from './style';
+import * as S from './Product.styled';
 import '../../variables.css';
 import { Modal } from '../Modal/Modal';
-
-const Type = {
-    CATEGORY: 'Category',
-    EXHIBITION: 'Exhibition',
-    PRODUCT: 'Product',
-    BRAND: 'Brand'
-};
+import { Type } from '../../Type';
 
 const Product = ({ product, bookmarkHandler, isBookmarked }) => {
     const [isOpen, setIsOpen] = useState(false);

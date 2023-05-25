@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import * as S from './style'
+import * as S from './Header.styled'
 import Nav from "../Nav/Nav";
 import { useState } from "react";
 
@@ -14,7 +14,7 @@ function Header() {
       <S.TitleContainer>
         <Link to="/">
           <S.Title>
-            <img src="../logo.png" alt="logo" />
+            <img src="../img/logo.png" alt="logo" />
             <h1>COZ Shopping</h1>
           </S.Title>
         </Link >
