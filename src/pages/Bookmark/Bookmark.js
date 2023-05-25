@@ -1,19 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Product from "../../components/Product/Product";
-import axios from "axios";
-import * as S from "./ProductListPage.styled";
+import * as S from "./Bookmark.styled";
 import { Type } from "../../Type";
 
+
 const ProductListPage = () => {
-    const [currentTab, setCurrentTab] = useState(0);
-    const [data, setData] = useState([])
     const [bookmarkData, setBookmarkData] = useState([])
 
     useEffect(() => {
-        axios.get("http://cozshopping.codestates-seb.link/api/v1/products")
-            .then(res => setData(res.data))
-            .catch(error => console.log(error))
-
         const bookmarkData = JSON.parse(localStorage.getItem('bookmark')) || [];
         setBookmarkData(bookmarkData);
     }, [])
@@ -43,6 +37,9 @@ const ProductListPage = () => {
         localStorage.setItem('bookmark', JSON.stringify(updatedBookmarkData));
     };
 
+    const [currentTab, setCurrentTab] = useState(0);
+    const data = bookmarkData
+
     const all = data && data.map((product) => <Product product={product} key={product.id} bookmarkHandler={bookmarkHandler} isBookmarked={bookmarkData.some(item => item.id === product.id)} />)
     const product = data && (data.filter(data => data.type === Type.PRODUCT)).map((product) => <Product product={product} key={product.id} bookmarkHandler={bookmarkHandler} isBookmarked={bookmarkData.some(item => item.id === product.id)} />)
     const category = data && (data.filter(data => data.type === Type.CATEGORY)).map((product) => <Product product={product} key={product.id} bookmarkHandler={bookmarkHandler} isBookmarked={bookmarkData.some(item => item.id === product.id)} />)
@@ -61,7 +58,6 @@ const ProductListPage = () => {
         setCurrentTab(index)
     };
 
-
     return (
         <>
             <S.TabMenu>
@@ -74,10 +70,7 @@ const ProductListPage = () => {
                 })}
             </S.TabMenu>
             <S.Desc>
-
-                {currentTab === 0 ?
-                    <S.ProductListAll>{all}</S.ProductListAll> :
-                    <S.ProductList>{type[currentTab].content}</S.ProductList>}
+                <S.ProductList>{type[currentTab].content}</S.ProductList>
             </S.Desc>
         </>
     )
