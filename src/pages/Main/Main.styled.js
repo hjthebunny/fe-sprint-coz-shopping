@@ -30,7 +30,7 @@ display: flex;
 align-items: center;
 `
 export const Title2 = styled(Title1)`
-margin-top: 0px`
+margin-top: 0px;`
 
 export const List = styled.ul`
 margin-top: 12px;
