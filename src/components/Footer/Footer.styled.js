@@ -5,7 +5,7 @@ export const FooterContainer = styled.div`
 position: relative;
 height: 58px;
 border-top: 1px solid var(--black-trans-100);
-margin-top: 13px;
+margin-top: 60px;
 `;
 
 export const Text = styled.div`
