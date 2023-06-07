@@ -2,19 +2,13 @@
 import styled from 'styled-components'
 
 export const ProductListAll = styled.ul`
-display:flex;
-justify-content:center;
+display:grid;
+grid-template-columns: repeat(4, 1fr);
 list-style:none;
 margin: 26.5px 130px ;
-flex-wrap: wrap;
 `
 
 export const ProductList = styled(ProductListAll)`
-//마지막 열의 아이템이 하나 남은 경우 css 정렬을 위한 처리
->li:last-child {
-  margin-right: auto ;
-  margin-left:106px ; 
-}
 `
 
 export const TabWrapper = styled.div`

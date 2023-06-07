@@ -1,13 +1,10 @@
 import styled from 'styled-components'
 
 export const ProductList = styled.ul`
-display:flex;
-align-items: flex-start;
-margin-right: auto ;
-margin-left:106px ;
+display:grid;
+grid-template-columns: repeat(4, 1fr);
 list-style:none;
 margin: 26.5px 130px ;
-flex-wrap: wrap;
 `
 
 export const TabWrapper = styled.div`
@@ -45,5 +42,6 @@ border-bottom: ${(props) => props.focused ? '3px solid #412DD4' : null};
 transition:0.3s
 `
 export const Desc = styled.div`
-
+display: flex;
+justify-content: center;
 `;

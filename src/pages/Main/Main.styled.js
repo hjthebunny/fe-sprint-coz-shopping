@@ -4,9 +4,8 @@ display:flex;
 justify-content:center`
 
 export const BookmarkListWrapper = styled.div`
-width: fit-content;
-margin-left:215.5px ;
-height: 300px;
+display: flex;
+justify-content: center;
 `
 
 
@@ -26,7 +25,6 @@ font-style: normal;
 font-weight: 600;
 font-size: 24px;
 line-height: 29px;
-display: flex;
 align-items: center;
 `
 export const Title2 = styled(Title1)`
@@ -34,8 +32,8 @@ margin-top: 0px`
 
 export const List = styled.ul`
 margin-top: 12px;
-display:flex;
-justify-content:center;
+display:grid;
+grid-template-columns: repeat(4, 1fr);
 list-style:none;
 padding-left:0px;
 `
